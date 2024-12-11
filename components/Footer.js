@@ -6,15 +6,15 @@ export default function Footer({ navigation }) {
   return (
     <View style={styles.footer}>
       <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.iconContainer}>
-        <Icon name="home" size={30} color="#333" />
+        <Icon name="home" size={30} color="#192D38" />
         <Text style={styles.label}>Home</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Profile')} style={styles.iconContainer}>
-        <Icon name="person" size={30} color="#333" />
+        <Icon name="person" size={30} color="#192D38" />
         <Text style={styles.label}>Profile</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('About')} style={styles.iconContainer}>
-        <Icon name="info" size={30} color="#333" />
+        <Icon name="info" size={30} color="#192D38" />
         <Text style={styles.label}>About</Text>
       </TouchableOpacity>
     </View>
@@ -32,11 +32,11 @@ const styles = StyleSheet.create({
     borderTopColor: '#ddd',
   },
   iconContainer: {
-    alignItems: 'center', // Centers both the icon and label
+    alignItems: 'center', 
   },
   label: {
-    marginTop: 4, // Adds space between the icon and label
-    fontSize: 12, // Adjust the size as needed
-    color: '#333', // Color of the label text
+    marginTop: 4, 
+    fontSize: 12, 
+    color: '#192D38', 
   },
 });

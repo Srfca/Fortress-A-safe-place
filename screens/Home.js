@@ -4,16 +4,16 @@ import { auth, db, rtdb } from '../firebaseConfig';
 import { onValue, ref, set } from 'firebase/database';
 import { collection, addDoc, query, orderBy, limit, onSnapshot, doc, getDoc } from 'firebase/firestore';
 import Icon from 'react-native-vector-icons/Feather';
-import Footer from '../components/Footer.js';
+import Footer from '../components/Footer';
 
 const { width } = Dimensions.get('window');
-const CARD_WIDTH = width * 0.8;
-const CARD_HEIGHT = CARD_WIDTH * 0.6;
+const CARD_WIDTH = width * 1;
+const CARD_HEIGHT = CARD_WIDTH * 0.7
 
 const cardImages = [
-  'https://example.com/image1.jpg',
-  'https://example.com/image2.jpg',
-  'https://example.com/image3.jpg',
+  require('../assets/1.jpg'),
+  require('../assets/2.jpg'),
+  require('../assets/3.jpg')
 ];
 
 export default function HomeScreen({ navigation }) {
@@ -82,9 +82,9 @@ export default function HomeScreen({ navigation }) {
     return type === 'Fire' ? 'fire' : 'wind';
   };
 
-  const renderCard = ({ item, index }) => (
+  const renderCard = ({ item }) => (
     <View style={styles.card}>
-      <Image source={{ uri: item }} style={styles.cardImage} />
+      <Image source={item} style={styles.cardImage} />
     </View>
   );
 
@@ -185,6 +185,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     borderBottomWidth: 1,
     borderBottomColor: '#f0f0f0',
+    
   },
   headerTitle: {
     fontSize: 20,

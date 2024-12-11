@@ -4,8 +4,7 @@ import { auth, db } from '../firebaseConfig';
 import { updateProfile, EmailAuthProvider, reauthenticateWithCredential, updatePassword, updateEmail } from 'firebase/auth';
 import { doc, updateDoc, getDoc } from 'firebase/firestore';
 import Footer from '../components/Footer.js';
-import Icon from 'react-native-vector-icons/Feather';
-
+import { Ionicons } from '@expo/vector-icons';
 export default function ProfileScreen({ navigation }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -108,7 +107,11 @@ export default function ProfileScreen({ navigation }) {
       />
       {secureTextEntry && (
         <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.eyeIcon}>
-          <Icon name={showPassword ? 'eye-off' : 'eye'} size={20} color="#888" />
+                  <Ionicons
+          name={showPassword ? 'eye-off' : 'eye'} // Change icon based on state
+          size={20}
+          color="#888"
+        />
         </TouchableOpacity>
       )}
     </View>
@@ -157,14 +160,14 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     paddingVertical: 10,
-    fontSize: 16,
+    fontSize: 17,
     color: '#333',
   },
   eyeIcon: {
     padding: 10,
   },
   button: {
-    backgroundColor: '#007AFF',
+    backgroundColor: '#192D38',
     padding: 15,
     borderRadius: 8,
     alignItems: 'center',
@@ -173,7 +176,8 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     fontWeight: '600',
-    fontSize: 16,
+    fontSize: 17,
+    fontFamily: 'Poppins-Medium',
   },
 });
 
