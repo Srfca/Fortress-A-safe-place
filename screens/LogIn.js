@@ -16,9 +16,9 @@ export default function LoginScreen({ navigation }) {
       navigation.navigate('Home');
     } catch (error) {
       Alert.alert(
-        'Error, please read carefully', // Title of the alert
-        'Leave a mark.\nPlease make sure to check your inputs or try again later.', 
-        [{ text: 'done', onPress: () => console.log('OK Pressed') }] 
+        'Input Required',
+        'Please fill out the required fields.', 
+        [{ text: 'Okay', onPress: () => console.log('OK Pressed') }] 
       );
     }
   };
@@ -31,8 +31,8 @@ export default function LoginScreen({ navigation }) {
     try {
       await sendPasswordResetEmail(auth, email);
       Alert.alert(
-        'Instructions Sent',
-        `We sent your instructions to change password to ${email}. Please check both your inbox and spam.`,
+        'Instruction Sent',
+        `We sent your instruction to change password to ${email}. Please check both your inbox and spam.`,
         [{ text: 'OK', onPress: () => console.log('OK Pressed') }]
       );
     } catch (error) {
@@ -99,31 +99,34 @@ const styles = StyleSheet.create({
     left: 20,
   },
   title: {
-    fontFamily: 'Roboto-Bold',
-    fontSize: 24,
+    fontFamily: 'Poppins-Black',
+    fontSize: 29,
     textAlign: 'center',
     marginTop: 80,
-    marginBottom: 10,
+    marginBottom: 5,
   },
   subtitle: {
-    fontFamily: 'Roboto-Regular',
-    fontSize: 16,
+    fontFamily: 'Poppins-Medium',
+    fontSize: 17,
+    top: -5,
     textAlign: 'center',
     marginBottom: 30,
-    color: '#666',
+    color: '#605D5D',
   },
   label: {
-    fontFamily: 'Roboto-Bold',
-    fontSize: 18,
+    color: '#605D5D',
+    fontFamily: 'Poppins-Medium',
+    fontSize: 17,
     marginBottom: 10,
   },
   input: {
+    fontSize: 17,
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 5,
     padding: 10,
     marginBottom: 15,
-    fontFamily: 'Roboto-Regular',
+    fontFamily: 'Poppins-Medium',
   },
   inputError: {
     borderColor: 'red',
@@ -137,25 +140,29 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   passwordInput: {
+    fontSize: 17,
     flex: 1,
     padding: 10,
-    fontFamily: 'Roboto-Regular',
+    fontFamily: 'Poppins-Medium',
   },
   forgotPassword: {
-    fontFamily: 'Roboto-Regular',
-    color: '#4a90e2',
-    textAlign: 'right',
-    marginBottom: 20,
+    fontFamily: 'Poppins-Medium',
+    fontSize: 17,
+    color: '#192D38',
+    bottom: -100,
+    textAlign: 'center',
+    marginBottom: 18,
   },
   button: {
-    backgroundColor: '#4a90e2',
+    backgroundColor: '#192D38',
     paddingVertical: 12,
     borderRadius: 5,
+    top: -30,
   },
   buttonText: {
-    fontFamily: 'Roboto-Regular',
+    fontFamily: 'Poppins-Medium',
     color: '#fff',
-    fontSize: 18,
+    fontSize: 17,
     textAlign: 'center',
   },
 });

@@ -1,26 +1,32 @@
 import React from 'react';
 import { View, Text, ImageBackground, StyleSheet, TouchableOpacity } from 'react-native';
-
+import { useFonts } from 'expo-font';
 export default function GetStartedScreen({ navigation }) {
   return (
     <ImageBackground
-      source={require('../assets/background.jpg')}
+      source={require('../assets/background.png')}
       style={styles.background}
     >
       <View style={styles.container}>
-        <Text style={styles.title}>WELCOME TO FORTRESS</Text>
-        <Text style={styles.subtitle}>Living a safe place. Tap below to get started</Text>
+        <Text style={styles.title}>FORTRESS</Text>
+        <Text style={styles.subtitle}>Stay Safe with Real-Time Alerts. Tap  {'\n'} below to monitor your home.</Text>
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate('Register')}
         >
-          <Text style={styles.buttonText}>Register</Text>
+          <Text style={{
+  color: '#000000',
+  fontFamily: 'Poppins-Medium',
+  fontSize: 17,
+  textAlign: 'center'
+}}>Register</Text>
+
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.button, styles.loginButton]}
           onPress={() => navigation.navigate('Login')}
         >
-          <Text style={styles.buttonText}>Log In</Text>
+          <Text style={styles.buttonText}>   Log In    </Text>
         </TouchableOpacity>
       </View>
     </ImageBackground>
@@ -39,35 +45,37 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   title: {
-    fontFamily: 'Roboto-Bold',
-    fontSize: 32,
-    color: '#fff',
+    fontFamily: 'Poppins-Black',
+    fontSize: 90,
+    color: '#FFFFFF',
     textAlign: 'center',
-    marginBottom: 20,
+    top: -210,
+    marginBottom: 5,
   },
   subtitle: {
-    fontFamily: 'Roboto-Regular',
-    fontSize: 18,
-    color: '#fff',
+    fontFamily: 'Poppins-Medium',
+    fontSize: 19,
+    color: '#FFFFFF',
     textAlign: 'center',
-    marginBottom: 40,
+    top: -245,
+    marginBottom: 5,
   },
   button: {
-    backgroundColor: '#4a90e2',
-    paddingVertical: 12,
-    paddingHorizontal: 40,
+    bottom : -230,
+    backgroundColor: '#FFFFFF',
+    paddingVertical: 10,
+    paddingHorizontal: 228,
     borderRadius: 25,
+    color: '#FFFFFF',
     marginBottom: 15,
   },
   loginButton: {
-    backgroundColor: 'transparent',
-    borderWidth: 2,
-    borderColor: '#fff',
+    backgroundColor: '#192D38',
   },
   buttonText: {
-    fontFamily: 'Roboto-Regular',
-    color: '#fff',
-    fontSize: 18,
+    fontFamily: 'Poppins-Medium',
+    color: '#FFFFFF',
+    fontSize: 17,
     textAlign: 'center',
   },
 });

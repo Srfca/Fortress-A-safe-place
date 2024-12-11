@@ -32,7 +32,11 @@ export default function RegisterScreen({ navigation }) {
         { text: 'OK', onPress: () => navigation.navigate('Login') },
       ]);
     } catch (error) {
-      Alert.alert('Error', error.message);
+      Alert.alert(
+        'Input Required',
+        'Please fill out the required fields.', 
+        [{ text: 'Okay', onPress: () => console.log('OK Pressed') }] 
+      );
     }
   };
 
@@ -41,8 +45,8 @@ export default function RegisterScreen({ navigation }) {
       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
         <Ionicons name="arrow-back" size={24} color="#000" />
       </TouchableOpacity>
-      <Text style={styles.title}>Be safe at your home!</Text>
-      <Text style={styles.subtitle}>Sign up to experience the service</Text>
+      <Text style={styles.title}>Home safety starts here!</Text>
+      <Text style={styles.subtitle}>Sign up to experience the service!</Text>
       <Text style={styles.label}>Account Information</Text>
       <TextInput
         style={styles.input}
@@ -101,31 +105,34 @@ const styles = StyleSheet.create({
     left: 20,
   },
   title: {
-    fontFamily: 'Roboto-Bold',
-    fontSize: 24,
+    fontFamily: 'Poppins-Bold',
+    fontSize: 29,
     textAlign: 'center',
     marginTop: 80,
-    marginBottom: 10,
+    marginBottom: 5,
   },
   subtitle: {
-    fontFamily: 'Roboto-Regular',
-    fontSize: 16,
+    fontFamily: 'Poppins-Medium',
+    fontSize: 17,
+      top: -5,
     textAlign: 'center',
     marginBottom: 30,
-    color: '#666',
+    color: '#605D5D',
   },
   label: {
-    fontFamily: 'Roboto-Bold',
-    fontSize: 18,
+    color: '#605D5D',
+    fontFamily: 'Poppins-Medium',
+    fontSize: 17,
     marginBottom: 10,
   },
   input: {
+    fontSize: 17,
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 5,
     padding: 10,
     marginBottom: 15,
-    fontFamily: 'Roboto-Regular',
+    fontFamily: 'Poppins-Medium',
   },
   passwordContainer: {
     flexDirection: 'row',
@@ -138,17 +145,19 @@ const styles = StyleSheet.create({
   passwordInput: {
     flex: 1,
     padding: 10,
-    fontFamily: 'Roboto-Regular',
+    fontFamily: 'Poppins-Medium',
+    fontSize: 17,
   },
   button: {
-    backgroundColor: '#4a90e2',
+    backgroundColor: '#192D38',
     paddingVertical: 12,
     borderRadius: 5,
+    top: 20,
   },
   buttonText: {
-    fontFamily: 'Roboto-Regular',
+    fontFamily: 'Poppins-Medium',
     color: '#fff',
-    fontSize: 18,
+    fontSize: 17,
     textAlign: 'center',
   },
 });

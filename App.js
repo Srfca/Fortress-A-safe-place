@@ -4,14 +4,16 @@ import { useFonts } from 'expo-font';
 import Navigation from './routers/Navigation';
 
 export default function App() {
- /* const [fontsLoaded] = useFonts({
-    'Roboto-Regular': require('./assets/fonts/Roboto-Regular.ttf'),
-    'Roboto-Bold': require('./assets/fonts/Roboto-Bold.ttf'),
+  const [fontsLoaded] = useFonts({
+    'Poppins-Black': require('./assets/fonts/Poppins-Black.ttf'),
+    'Poppins-Medium': require('./assets/fonts/Poppins-Medium.ttf'),
+    'Poppins-Regular': require('./assets/fonts/Poppins-Regular.ttf'),
+    'Poppins-Bold': require('./assets/fonts/Poppins-Bold.ttf'),
   });
 
   if (!fontsLoaded) {
-    return null;
-  }*/
+    return null; 
+  }
 
   return (
     <NavigationContainer>
@@ -19,4 +21,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
